@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "ZROM 超便利AIアシスタント",
+  "description": "ZROM利用中にどんなページでもAIアシスタントとしてチャットやWebページ要約・自動作業提案などを行います。",
+  "version": "0.1.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html", "default_icon": "icon.png"},
+  "content_scripts": [
+    {"matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_end"}
+  ]
+}
